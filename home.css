@@ -64,3 +64,48 @@ a {
 a:hover {
     text-decoration: underline;
 }
+.calendar-container {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.available {
+    background-color: #e6ffe6; /* Light green */
+    cursor: pointer;
+}
+
+.unavailable {
+    background-color: #ffe6e6; /* Light red */
+    color: #888;
+}
+
+.today {
+    font-weight: bold;
+    border: 2px solid #007bff;
+}
