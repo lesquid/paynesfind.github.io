@@ -6,7 +6,25 @@ body {
     color: #333;
 }
 
-div {
+.title-container {
+    text-align: center; /* Center the main title and subtitle */
+    margin-bottom: 30px; /* Add some space below the title area */
+}
+
+h1.main-title {
+    color: #007bff;
+    font-size: 2.8em; /* Slightly larger main title */
+    margin-bottom: 5px; /* Reduce space between title and subtitle */
+}
+
+h2.subtitle {
+    color: #555; /* A slightly softer color for the subtitle */
+    font-size: 1.6em; /* Slightly smaller subtitle */
+    font-style: italic; /* Optional: Add italics for a subtitle feel */
+    font-weight: normal; /* Make it less bold than a regular h2 */
+}
+
+div.content-wrapper {
     max-width: 800px;
     margin: 0 auto;
     background-color: #fff;
@@ -15,23 +33,15 @@ div {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
-    color: #007bff;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
 h2 {
+    color: #007bff;
     font-size: 1.8em;
     margin-top: 30px;
     margin-bottom: 15px;
 }
 
 h3 {
+    color: #007bff;
     font-size: 1.4em;
     margin-top: 20px;
     margin-bottom: 10px;
