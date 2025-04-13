@@ -49,5 +49,72 @@
             <p>Payne's Find Research Boat Charter, for diving the Recherche Archipelago</p>
       </div>
     </div>
+    <script>
+    const currentMonthYear = document.getElementById('currentMonthYear');
+const calendarDays = document.getElementById('calendarDays');
+const prevMonthBtn = document.getElementById('prevMonth');
+const nextMonthBtn = document.getElementById('nextMonth');
+
+let currentDate = new Date();
+
+function renderCalendar() {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    currentMonthYear.textContent = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
+    calendarDays.innerHTML = ''; // Clear previous days
+
+    let date = 1;
+    for (let i = 0; i < 6; i++) { // Up to 6 weeks
+        const row = calendarDays.insertRow();
+        for (let j = 0; j < 7; j++) { // 7 days a week
+            if (i === 0 && j < firstDayOfMonth) {
+                const cell = row.insertCell();
+            } else if (date > daysInMonth) {
+                break;
+            } else {
+                const cell = row.insertCell();
+                cell.textContent = date;
+                const day = new Date(year, month, date);
+                const formattedDay = day.toISOString().slice(0, 10); // YYYY-MM-DD
+
+                // Check availability (replace with your actual data)
+                const availabilityData = {
+                    '2025-04-15': 'unavailable',
+                    '2025-04-18': 'available',
+                    '2025-04-22': 'available',
+                    // ... more dates
+                };
+
+                if (availabilityData[formattedDay] === 'available') {
+                    cell.classList.add('available');
+                } else if (availabilityData[formattedDay] === 'unavailable') {
+                    cell.classList.add('unavailable');
+                }
+
+                if (day.toDateString() === new Date().toDateString()) {
+                    cell.classList.add('today');
+                }
+
+                date++;
+            }
+        }
+    }
+}
+
+prevMonthBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+});
+
+nextMonthBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+});
+
+renderCalendar(); // Initial render
+</script>
 </body>
 </html>
