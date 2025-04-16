@@ -3,126 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payne's Find Research Boat Charter</title>
-    <link rel="stylesheet" href="home.css">
+    <title>Paynes Find - Marine Adventures</title>
+    <style>
+        /* Basic styles for demonstration - feel free to customize */
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #007BFF; /* A common link color */
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .contact-info {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Payne's Find </h1>
-        <h2>Research Boat Charter</h2>
-        <p>Payne's Find is a 10.4 metre 8 passenger high speed research vessel with dry cabin and large working deck area. Surveyed 2C. No noise power for filming.</p>
 
-        <h2>Contact Details</h2>
-        <p>You can email me to book a charter</a>.</p>
+    <header>
+        <h1>About</h1>
+        <p>Discover the Secrets Beneath the Surface</p>
+    </header>
 
-        <div>
-            <h3>Availability&nbsp;</h3>
-            <p>Check if spaces are available</p>
-            <div class="calendar-container">
-    <div class="calendar-header">
-        <button id="prevMonth">Previous</button>
-        <h2 id="currentMonthYear"></h2>
-        <button id="nextMonth">Next</button>
-    </div>
-    <div class="calendar-body">
-        <table id="calendar">
-            <thead>
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody id="calendarDays">
-                </tbody>
-        </table>
-        </div>
-</div>
-      </div>
+    <main>
+        <section class="section">
+            <p>Step aboard Paynes Find, a 10.4m high-speed commercial charter vessel built for adventure. Purpose-designed for research, film, and diving operations, she now offers unforgettable scenic and dive charters through one of Australia's most pristine coastal frontiers—the Esperance Archipelago of the Recherche.</p>
+            <p>Owned and operated by seasoned ocean explorer Marc Payne, Paynes Find is more than just a boat—it's a gateway to hidden coves, crystal-clear waters, and marine life rarely seen by the everyday traveler. With decades of experience working above and below the waterline, Marc brings a unique depth of knowledge, storytelling, and passion to every journey.</p>
+            <p>Whether you're chasing untouched dive sites, filming remote ocean wildlife, or simply soaking in the raw beauty of the Southern Ocean, Paynes Find will take you there—fast, safe, and in style.</p>
+            <p>Dive in. Explore deeper. The treasures of the Recherche await.</p>
+        </section>
 
-        <div>
-            <h3>Scientific or Scenic</h3>
-            <p>Payne's Find Research Boat Charter, for diving the Recherche Archipelago</p>
-      </div>
-    </div>
+        <section class="section">
+            <h2>The Boat – Paynes Find</h2>
+            <p>Paynes Find is available for vessel hire only, offering unique access to Western Australia's stunning coastal and offshore waters.</p>
+            <p>When she’s not supporting research or filming expeditions, Paynes Find is available for private charter—perfect for small group adventures with a spirit for the sea.</p>
+            <ul>
+                <li>Day trips: Up to 9 guests on coastal adventures</li>
+                <li>Offshore trips: Up to 6 guests</li>
+                <li>Overnight liveaboards: Sleeps up to 4 comfortably</li>
+            </ul>
+            <p>She’s built for range and reliability, capable of reaching remote islands and untouched locations for those ready to take their adventure to the next level.</p>
+            <p>For more information or a quote on the adventure of a lifetime, contact Marc.</p>
+        </section>
+
+        <section class="section contact-info">
+            <h2>Contact. Marc</h2>
+            <p>mfpayne@bigpond.com</p>
+            <p>0429 018 671</p>
+            <p>FB Payne’s Find Research Boat Charter</p>
+        </section>
+
+        <section class="section">
+            <h2>Film and Research</h2>
+            <p>Marc’s passion for marine research was sparked in 1979, when his father dived the Great Australian Bight. Since then, Marc has forged a reputation as one of Australia’s most experienced and respected marine operators. He has played key roles in dozens of discoveries and collaborated with some of the world’s leading researchers and film crews.</p>
+            <p>With decades of hands-on experience, Marc has worked across a range of high-profile marine research and film productions, serving as a Commercial Dive Supervisor, Vessel Master, and Marine Operations Coordinator. His work is known for its precision, safety, and reliability—whether managing complex logistics at sea or diving remote, challenging locations.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; [Year] Payne's Find Research Boat Charter</p> </footer>
+
     <script>
-    const currentMonthYear = document.getElementById('currentMonthYear');
-const calendarDays = document.getElementById('calendarDays');
-const prevMonthBtn = document.getElementById('prevMonth');
-const nextMonthBtn = document.getElementById('nextMonth');
-
-let currentDate = new Date();
-
-function renderCalendar() {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
-    const firstDayOfMonth = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    currentMonthYear.textContent = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
-    calendarDays.innerHTML = ''; // Clear previous days
-
-    let date = 1;
-    for (let i = 0; i < 6; i++) { // Up to 6 weeks
-        const row = calendarDays.insertRow();
-        for (let j = 0; j < 7; j++) { // 7 days a week
-            if (i === 0 && j < firstDayOfMonth) {
-                const cell = row.insertCell();
-            } else if (date > daysInMonth) {
-                break;
-            } else {
-                const cell = row.insertCell();
-                cell.textContent = date;
-                const day = new Date(year, month, date);
-                const formattedDay = day.toISOString().slice(0, 10); // YYYY-MM-DD
-
-                // Check availability (replace with your actual data)
-                const availabilityData = {
-                    '2025-04-15': 'unavailable',
-                    '2025-04-18': 'available',
-                    '2025-04-22': 'available',
-                    // ... more dates
-                };
-
-                if (availabilityData[formattedDay] === 'available') {
-                    cell.classList.add('available');
-                } else if (availabilityData[formattedDay] === 'unavailable') {
-                    cell.classList.add('unavailable');
-                }
-
-                if (day.toDateString() === new Date().toDateString()) {
-                    cell.classList.add('today');
-                }
-
-                date++;
-            }
-            // Check availability (replace with your actual data)
-            const availabilityData = {
-                '2025-04-13': 'available', // Marking today as available (you can change to 'unavailable' if needed)
-                '2025-04-15': 'unavailable',
-                '2025-04-18': 'available',
-                '2025-04-22': 'available',
-                // ... more dates
-            };
-        }
-    }
-}
-
-prevMonthBtn.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() - 1);
-    renderCalendar();
-});
-
-nextMonthBtn.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() + 1);
-    renderCalendar();
-});
-
-renderCalendar(); // Initial render
-</script>
+        // You can add JavaScript here if needed
+    </script>
 </body>
 </html>
