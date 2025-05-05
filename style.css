@@ -1,1 +1,60 @@
+/* ================================== */
+/* Basic Styles */
+/* ================================== */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
 
+/* ================================== */
+/* Heading Styles */
+/* ================================== */
+h1, h2 {
+    color: #007BFF; /* A common link color */
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+/* ================================== */
+/* Paragraph Styles */
+/* ================================== */
+p {
+    margin-bottom: 1em;
+}
+
+/* ================================== */
+/* Section Styles */
+/* ================================== */
+.section {
+    margin-bottom: 30px;
+}
+
+/* ================================== */
+/* Contact Info Styles */
+/* ================================== */
+.contact-info {
+    font-weight: bold;
+}
+
+/* ================================== */
+/* Image Styles */
+/* ================================== */
+img {
+    max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+    height: auto;    /* Maintains the image's aspect ratio */
+    display: block;   /* Prevents extra spacing below the image */
+    margin: 10px auto; /* Centers the image horizontally with some top/bottom margin */
+}
+
+/* Specific styles for images within the header */
+header img {
+    border: 3px dashed #ADD8E6;
+}
